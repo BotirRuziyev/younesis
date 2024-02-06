@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@import '_variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input,
+textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+a,
+span {
+    color: inherit;
+    display: inline-block;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+body {
+    background: $color-1;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+}
+
+body.dark-theme {
+    background: $color-3;
+    color: $color-1;
+}
+
+.auth_title {
+    color: #121111;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.main_title {
+    color: $color-2;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.main_title_2 {
+    color: $color-2;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.description {
+    color: $color-2;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.edit_link {
+    border-radius: 10px;
+    border: 1px solid $color-4;
+    height: 48px;
+    padding: 0px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 4px;
+    
+    span {
+        color: $color-2;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+}
+
+.edit_link.red {
+    span {
+        color: $color-5;
+    }
+}
+
+.error_text {
+    background: #cf2e2e4e;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.link-red {
+    border-radius: 8px;
+    background: $color-5;
+    color: $color-1;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    height: 48px;
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    li {
+        color: $color-6;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+    }
+
+    li.active {
+        color: $color-2;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.edit_head_mobile {
+    display: none;
+}
+
+.courses_card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+    .card {
+        border-radius: 16px;
+        background: $color-7;
+        padding: 16px;
+        width: 325px;
+        height: 346px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card_left {
+            display: none;
+        }
+
+        .card_right {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card_img {
+            border-radius: 8px;
+            overflow: hidden;
+            background: $color-8;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-bottom: 16px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .card_title {
+            color: $color-2;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .remained {
+            border-radius: 29px;
+            background: $color-9;
+            padding: 4px 12px;
+            width: auto;
+            display: inline-block;
+            margin-top: 8px;
+            color: $color-1;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+
+        .amount {
+            border-radius: 29px;
+            background: $color-10;
+            padding: 4px 12px;
+            color: $color-2;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            display: inline-block;
+            margin-top: 16px;
+
+            span {
+                color: $color-11;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18px;
+                margin-left: 8px;
+                text-decoration: line-through;
+            }
+        }
+
+        .card_degree {
+            .degree_head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+
+                .dedgree_title {
+                    color: $color-2;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 18px;
+                }
+
+                .degree_value {
+                    color: $color-5;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 18px;
+                }
+            }
+
+            .degree_line {
+                border-radius: 4px;
+                background: $color-10;
+                height: 8px;
+                position: relative;
+
+                span {
+                    height: 8px;
+                    border-radius: 4px;
+                    background: $color-5;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.dark-theme {
+    .auth_title {
+        color: $color-1;
+    }
+
+    .main_title {
+        color: $color-1;
+    }
+
+    .main_title_2 {
+        color: $color-1;
+    }
+
+    .description {
+        color: $color-1;
+    }
+
+    .edit_link {
+        border: 1px solid #4D4C4C;
+
+        svg {
+            path, circle {
+                stroke: #fff;
+            }
+        }
+
+        span {
+            color: #fff;
+        }
+    }
+
+    .courses_card_wrapper {
+        .card {
+            background: #222222;
+
+            .card_img {
+                background: #3B3B3B;
+            }
+
+            .card_title {
+                color: #fff;
+            }
+    
+            .amount {
+                background: #3B3B3B;
+                color: #fff;
+            }
+
+            .card_degree {
+                .degree_head {    
+                    .dedgree_title {
+                        color: #fff;
+                    }
+    
+                    .degree_value {
+                        color: #fff;
+                    }
+                }
+    
+                .degree_line {
+                    background: #4B4B4B;
+                }
+            }
+        }
+    }
+}
+
+.support_chat {
+    position: relative;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+    padding: 20px 26px 20px 20px;
+
+    .icon {
+        position: absolute;
+        bottom: 39px;
+        right: 0;
+    }
+
+    .title {
+        position: relative;
+        color: $color-1;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 4px;
+    }
+
+    .description {
+        color: rgba(255, 255, 255, 0.80);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom: 46px;
+    }
+
+    button {
+        border-radius: 8px;
+        background: #48B2E5;
+        padding: 12px 16px;
+        color: $color-1;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .main_title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+    }
+
+    .main_title_2 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+    }
+
+    .auth_title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+    
+    .edit_head_mobile {
+        display: block;
+        position: relative;
+        margin-bottom: 24px;
+
+        .link {
+            position: absolute;
+        }
+
+        .title {
+            text-align: center;
+            color: $color-2;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+        
+    }
+
+    .dark-theme {
+        .edit_head_mobile {
+            .title {
+                color: $color-1;
+            }
+        }
+    }
+
+    .courses_card_wrapper {
+        gap: 12px;
+    
+        .card {
+            padding: 12px;
+            width: 100%;
+            height: 104px;
+            gap: 12px;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            .card_left {
+                display: block;
+                border-radius: 8px;
+                background: $color-10;
+                padding: 4px;
+                width: 80px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+    
+            .card_img {
+                display: none;
+            }
+    
+            .card_right {
+                width: calc(100% - 92px);
+            }
+
+            .card_title {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 22px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .amount {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18px;
+                margin-top: 8px;
+    
+                span {
+                    display: none;
+                }
+            }
+    
+            .card_degree {
+                .degree_head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+    
+                    .dedgree_title {
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 14px;
+                    }
+    
+                    .degree_value {
+                        font-size: 12px;
+                        font-weight: 600;
+                        line-height: 14px;
+                    }
+                }
+    
+                .degree_line {
+                    height: 4px;
+    
+                    span {
+                        height: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .dark-theme {
+        .courses_card_wrapper {
+            .card {
+                .card_left {
+                    background: $color-12;
+                }
+            }
+        }
+    }
+}
+
+
+// new version
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.main_container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.main_btn {
+    border-radius: 44px;
+    background: linear-gradient(90deg, #EB3349 0%, #F44343 100%);
+    padding: 10px 12px;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: #fff;
+}
+
+.main_title {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px; 
+}
+
+.subtitle {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+// new version end
