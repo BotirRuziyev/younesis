@@ -1,17 +1,11 @@
 <template>
   <div class="partner">
-    <head-new to="Tinder" page_title="EdNet"></head-new>
+    <head-new to="" @click="$router.go(-1)" page_title="EdNet"></head-new>
     <div class="main_container">
       <div class="partner_in">
         <div class="partner_search_and_filter">
-          <router-link to="#" class="partner_search">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <router-link to="partner-search" class="partner_search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M15.7138 6.8382C18.1647 9.28913 18.1647 13.2629 15.7138 15.7138C13.2629 18.1647 9.28913 18.1647 6.8382 15.7138C4.38727 13.2629 4.38727 9.28913 6.8382 6.8382C9.28913 4.38727 13.2629 4.38727 15.7138 6.8382"
                 stroke="#A6A5A5"
@@ -27,42 +21,14 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <input
-              type="text"
-              class="partner_search_input"
-              placeholder="Найти продюсера"
-            />
+            <input type="text" class="partner_search_input" placeholder="Найти продюсера" />
           </router-link>
           <router-link to="#" class="filter">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="48" height="48" rx="12" fill="#222222" />
-              <path
-                d="M30 19H33"
-                stroke="#A6A5A5"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M15 19H26"
-                stroke="#A6A5A5"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M23 29H33"
-                stroke="#A6A5A5"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <path d="M30 19H33" stroke="#A6A5A5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M15 19H26" stroke="#A6A5A5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M23 29H33" stroke="#A6A5A5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <path
                 d="M15 29H18.5"
                 stroke="#A6A5A5"
@@ -100,24 +66,14 @@
                   </div>
                 </div>
                 <div class="specialty">
-                  <div
-                    class="specialty_item"
-                    v-for="specialty of item.specialty"
-                    :key="1"
-                  >
+                  <div class="specialty_item" v-for="specialty of item.specialty" :key="specialty">
                     {{ specialty }}
                   </div>
                 </div>
                 <div class="card_foot">
                   <div class="card_foot_left">
                     <div class="location">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -139,13 +95,7 @@
                     </div>
                     <div class="left_block">
                       <div class="item">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
@@ -164,13 +114,7 @@
                         <span>{{ item.saw }}</span>
                       </div>
                       <div class="item">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
@@ -185,13 +129,7 @@
                     </div>
                   </div>
                   <div class="right_block" @click="partnerModalFun(item.id)">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -219,24 +157,14 @@
               </div>
             </div>
             <div class="specialty">
-              <div
-                class="specialty_item"
-                v-for="specialty of item.specialty"
-                :key="1"
-              >
+              <div class="specialty_item" v-for="specialty of item.specialty" :key="specialty">
                 {{ specialty }}
               </div>
             </div>
             <div class="card_foot">
               <div class="card_foot_left">
                 <div class="location">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -258,13 +186,7 @@
                 </div>
                 <div class="left_block">
                   <div class="item">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -283,13 +205,7 @@
                     <span>{{ item.saw }}</span>
                   </div>
                   <div class="item">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -304,13 +220,7 @@
                 </div>
               </div>
               <div class="right_block">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -332,13 +242,7 @@
         <div class="partner_modal_top">
           <span>Добавить в визитницу</span>
           <button class="close_btn">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -374,24 +278,14 @@
             </div>
           </div>
           <div class="specialty">
-            <div
-              class="specialty_item"
-              v-for="specialty of partnerModal.specialty"
-              :key="1"
-            >
+            <div class="specialty_item" v-for="specialty of partnerModal.specialty" :key="specialty">
               {{ specialty }}
             </div>
           </div>
           <div class="card_foot">
             <div class="card_foot_left">
               <div class="location">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -413,13 +307,7 @@
               </div>
               <div class="left_block">
                 <div class="item">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -438,13 +326,7 @@
                   <span>{{ partnerModal.saw }}</span>
                 </div>
                 <div class="item">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -470,13 +352,7 @@
                 active: grade == i,
               }"
             >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -585,10 +461,7 @@ export default {
   },
   mounted() {
     document.querySelector("html").onclick = (e) => {
-      if (
-        !e.target.closest(".partner_modal_in") &&
-        !e.target.closest(".card_item")
-      ) {
+      if (!e.target.closest(".partner_modal_in") && !e.target.closest(".card_item")) {
         this.modal = false;
       }
       if (e.target.closest(".close_btn")) {
@@ -617,6 +490,7 @@ export default {
         gap: 4px;
         border-radius: 12px;
         background: rgb(34, 34, 34);
+        cursor: pointer;
         .partner_search_input {
           height: 100%;
           width: 100%;
@@ -629,6 +503,7 @@ export default {
           letter-spacing: 0%;
           text-align: left;
           padding: 0;
+          cursor: pointer;
         }
       }
     }

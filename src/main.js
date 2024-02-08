@@ -7,6 +7,7 @@ import '@/assets/app.scss'
 import components from '@/components/UI'
 import globalFunction from './globalFunction'
 import jQuery from "jquery";
+// import { gsap } from "gsap";
 const $ = jQuery;
 window.$ = $;
 

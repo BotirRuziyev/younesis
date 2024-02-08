@@ -2,9 +2,11 @@
   <div class="tinder">
     <div class="main_container">
       <div class="tinder__head">
-        <div class="search link">
-          <img src="@/assets/images/search_icon.svg" alt="" />
-        </div>
+        <router-link to="partner">
+          <div class="search link">
+            <img src="@/assets/images/search_icon.svg" alt="" />
+          </div>
+        </router-link>
         <router-link :to="{ name: 'CardHolder' }" class="link">
           <img src="@/assets/images/business_card_icon.svg" alt="" />
         </router-link>
@@ -12,11 +14,7 @@
       <div class="content_wrap">
         <div class="tinder_content">
           <div class="user_data_head">
-            <img
-              src="@/assets/images/User/user_1.png"
-              class="user_img"
-              alt=""
-            />
+            <img src="@/assets/images/User/user_1.png" class="user_img" alt="" />
             <div>
               <div class="user_name">Артем Николаев</div>
               <main-button>
@@ -28,13 +26,7 @@
           <div class="tinder_location">
             <div class="location_top">
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -55,13 +47,7 @@
                 Санкт-Петербург
               </span>
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -80,13 +66,7 @@
                 1.2K
               </span>
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -111,13 +91,7 @@
               <li>Провел 15000 часов в эфире</li>
               <li>
                 Получил премию оскар в 2020 году
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M16.9498 7.0498L7.0498 16.9498"
                     stroke="#CF2E2E"
@@ -137,13 +111,7 @@
             </ul>
             <button class="more">
               <span>Показать еще</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                 <path
                   d="M8.5 10L12.5 14L16.5 10"
                   stroke="white"
@@ -155,6 +123,37 @@
             </button>
           </div>
           <tinder-products />
+        </div>
+        <div class="down">
+          <svg
+            width="24.000000"
+            height="24.000000"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <desc>Created with Pixso.</desc>
+            <defs />
+            <path
+              id="Path"
+              d="M8 13.5L12 17.5L16 13.5"
+              stroke="#FFFFFF"
+              stroke-opacity="1.000000"
+              stroke-width="1.500000"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+            <path
+              id="Path"
+              d="M7 6.5L12 11.5L17 6.5"
+              stroke="#FFFFFF"
+              stroke-opacity="1.000000"
+              stroke-width="1.500000"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+          </svg>
         </div>
       </div>
 
@@ -171,6 +170,15 @@ export default {
   components: {
     TinderProducts,
     Evalution,
+  },
+  mounted() {
+    $(".tinder_content").on("mousewheel", function () {
+      if ($(".tinder_content").scrollTop() > $(".tinder_content").height()) {
+        $(".down").css("display", "none");
+      } else {
+        $(".down").css("display", "block");
+      }
+    });
   },
 };
 </script>
@@ -197,7 +205,30 @@ export default {
 
   .content_wrap {
     position: relative;
-
+    &::after {
+      content: "";
+      width: calc(100% - 28px);
+      height: 100%;
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 16px;
+      background: rgb(31, 31, 31);
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      width: calc(100% - 64px);
+      height: 100%;
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 16px;
+      background: rgb(27, 27, 27);
+      z-index: 1;
+    }
     .tinder_content {
       height: 424px;
       border-radius: 20px;
@@ -205,7 +236,8 @@ export default {
       background: #29292b;
       padding: 12px;
       overflow-y: scroll;
-
+      position: relative;
+      z-index: 2;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -251,6 +283,14 @@ export default {
         }
       }
     }
+    .down {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      line-height: 0;
+    }
   }
 
   .tinder_location {
@@ -279,7 +319,7 @@ export default {
   .cases {
     border-radius: 20px;
     background: #222;
-    padding: 16px;
+    padding: 16px 16px 12px 16px;
     margin-bottom: 16px;
 
     .title {

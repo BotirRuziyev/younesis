@@ -38,6 +38,7 @@ import newProfileEdit from '@/newVersion/profile/Edit.vue'
 import Partner from '@/newVersion/Partner.vue'
 import Filter from '@/newVersion/Filter.vue'
 import PartnerSearch from '@/newVersion/PartnerSearch.vue'
+import CoinsProfile from '@/newVersion/profile/CoinsProfile.vue'
 // new version end
 
 const routes = [
@@ -113,6 +114,7 @@ const routes = [
       { path: 'partner', name: 'Partner', component: Partner },
       { path: 'filter', name: 'Filter', component: Filter },
       { path: 'partner-search', name: 'PartnerSearch', component: PartnerSearch },
+      { path: 'coins-profile', name: 'CoinsProfile', component: CoinsProfile },
     ]
   }
   // New version end

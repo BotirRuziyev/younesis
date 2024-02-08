@@ -1,21 +1,16 @@
 <template>
   <div class="new_profile">
-    <head-new to="Tinder"></head-new>
-
+    <head-new to="" @click="$router.go(-1)"></head-new>
     <div class="main_container">
       <div class="profile">
         <!-- user_data_head start-->
         <div class="user_data_head">
-          <img
-            src="@/assets/images/User/user_1.png"
-            class="user_img"
-            alt="user"
-          />
+          <img src="@/assets/images/User/user_1.png" class="user_img" alt="user" />
           <div>
             <div class="user_name">Артем Николаев</div>
             <main-button class="user_btn">
               <img src="@/assets/images/msg_icon.svg" alt="msg_icon" />
-              <router-link to="/" >Написать</router-link>
+              <router-link to="/">Написать</router-link>
             </main-button>
           </div>
         </div>
@@ -25,13 +20,7 @@
         <div class="tinder_location">
           <div class="location_top">
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -52,13 +41,7 @@
               Санкт-Петербург • 24 года
             </span>
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -77,13 +60,7 @@
               1.2K
             </span>
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -100,13 +77,6 @@
         </div>
         <!-- tinder_location end-->
 
-        <!-- profil_information start -->
-        <div class="profil_information">
-          Работаю таргетологом с 2007 года. Менторю, веду телеграм-канал.
-          Бесплатные консультации в любое удобное для вас время время время
-        </div>
-        <!-- profil_information end -->
-
         <!-- contact_btn start -->
         <div class="contact_btn">
           <main-button class="phone_btn">
@@ -120,121 +90,18 @@
         </div>
         <!-- contact_btn end -->
 
-        <!-- profil_can start -->
-        <div class="profil_can">
-          <div class="can_top">
-            <img src="@/assets/images/profil_can.svg" alt="" />
-            <span>Могу</span>
-          </div>
-          <div class="profil_can_btn">
-            <!-- full button start -->
-            <div class="full_profil_button">
-              <span>Настроить таргет</span>
-              <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-            </div>
-            <div class="full_profil_button">
-              <span>Вести инстаграм</span>
-              <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-            </div>
-            <div class="full_profil_button">
-              <span>Проводить интервью</span>
-              <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-            </div>
-            <!-- full button start -->
-          </div>
-          <div class="profil_btn_more">
-            <span>Показать еще</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-            >
-              <path
-                d="M8.5 10L12.5 14L16.5 10"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
-        <!-- profil_Can end -->
-
-        <!-- Profil_need start-->
-        <div class="profil_need">
-          <div class="need_top">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M13.3333 17.5H6.66667C4.36583 17.5 2.5 15.6342 2.5 13.3333V6.66667C2.5 4.36583 4.36583 2.5 6.66667 2.5H13.3333C15.6342 2.5 17.5 4.36583 17.5 6.66667V13.3333C17.5 15.6342 15.6342 17.5 13.3333 17.5Z"
-                fill="#6F9FFC"
-                stroke="#6F9FFC"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M11.6667 7.47834C12.8233 8.63501 12.8233 10.51 11.6667 11.6667C10.51 12.8233 8.63501 12.8233 7.47834 11.6667C6.32167 10.51 6.32167 8.63501 7.47834 7.47834C8.63501 6.32167 10.51 6.32167 11.6667 7.47834"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M13.3334 13.3333L11.6667 11.6666L13.3334 13.3333Z"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span>Мне нужен</span>
-          </div>
-          <div class="full_profil_button">
-            <span>Маркетолог</span>
-            <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-          </div>
-          <div class="full_profil_button">
-            <span>Личный ассистент</span>
-            <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-          </div>
-          <div class="full_profil_button">
-            <span>Юрист</span>
-            <img src="@/assets/images/profil_indicator_right.svg" alt="" />
-          </div>
-        </div>
-        <!-- Profil_need end-->
-        <span class="border"></span>
         <!-- cases start -->
         <div class="cases bcg_gray">
           <div class="cases_top">
             <img src="@/assets/images/cases_icon.svg" alt="" />
-            <span>Кейсы</span>
+            <span>Кейсы и достижения</span>
           </div>
           <ul>
             <li>⚡️ Финалист губернаторского конкурса «Лидеры Востока»</li>
-            <li>Провел 15000 часов в эфире</li>
+            <li>Провел 15000 часов в эфире, топ 3 по эфирам 🔥🔥🔥</li>
             <li>
               Получил премию оскар в 2020 году
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M16.9498 7.0498L7.0498 16.9498"
                   stroke="#CF2E2E"
@@ -254,13 +121,7 @@
           </ul>
           <button class="profil_btn_more">
             <span>Показать еще</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <path
                 d="M8.5 10L12.5 14L16.5 10"
                 stroke="white"
@@ -276,13 +137,7 @@
         <!-- Products start -->
         <div class="products bcg_gray">
           <div class="products_top">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M9.99994 13.3333V15.8333"
                 stroke="#54C35F"
@@ -348,98 +203,180 @@
             <span>Продукты</span>
           </div>
           <!-- ntg child 1 -->
-          <div class="advice advice_1">
-            <img src="@/assets/images/profil_telegram.png" alt="" />
-            <span>Бесплатный продукт</span>
-            <span>Консультация по настройке рекламы в телеграм</span>
-            <span
-              >Помогу настроить рекламу в телеграм. В процессе настройки
-              пользуюсь сервисами Яндекс.Метрика и аналитикой от гугл.
-              Обращайтесь</span
-            >
-            <button class="products_btn_red">
-              <span>Написать</span>
+          <div class="advice">
+            <span class="title_small">Бесплатный продукт</span>
+            <span class="title">Консультация по настройке рекламы в телеграм</span>
+            <span class="description" v-if="!readActivated">{{ description.slice(0, 35) }}</span>
+            <span class="description" v-if="readActivated">{{ description }}</span>
+            <button class="show_more" v-if="!readActivated" @click="readActivated = true">
+              Показать еще
+              <svg
+                width="24.000000"
+                height="24.000000"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <desc>Created with Pixso.</desc>
+                <defs />
+                <path
+                  id="Path"
+                  d="M8 10L12 14L16 10"
+                  stroke="#FFFFFF"
+                  stroke-opacity="1.000000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
+            <div class="advice_bottom">
+              <button class="products_btn">
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs />
+                  <path
+                    id="Path"
+                    d="M7.07788 21.8081C9.78589 21.8081 11.9819 19.6121 11.9819 16.9041C11.9819 14.196 9.78687 12 7.07788 12C4.3689 12 2.17383 14.196 2.17383 16.9041"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="Path"
+                    d="M7.08301 21.813C6.34497 21.813 5.646 21.6501 5.01807 21.3591L2 22L2.6311 18.9761C2.33789 18.3459 2.17407 17.644 2.17407 16.9041"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    id="Path"
+                    d="M6.55688 12.0281C6.19897 11.207 6 10.312 6 9.37305C6 5.35596 9.5979 2.13306 14 2.13306C18.4021 2.13306 22 5.35596 22 9.37305C22 11.7471 20.738 13.8372 18.801 15.155C18.802 15.9111 18.8 16.9302 18.8 18L15.6609 16.4541C15.124 16.5571 14.5691 16.613 14 16.613C13.293 16.613 12.6069 16.5291 11.9529 16.3721"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <span>Написать</span>
+              </button>
+              <router-link to="#" v-if="readActivated">Подробнее</router-link>
+            </div>
           </div>
-          <!-- ntg child 2 -->
-          <div class="advice advice_2">
-            <span>Бесплатный продукт</span>
-            <span>Настрою таргет</span>
-            <span
-              >Бесплатно – 1 час, после истечения времени останавливаем.</span
-            >
-            <button class="products_btn_red">
-              <span>Написать</span>
+          <div class="advice">
+            <span class="title_small">от 15 000₽</span>
+            <span class="title">Личная консультация</span>
+            <span class="description" v-if="!readActivated2">{{ description2.slice(0, 35) }}</span>
+            <span class="description" v-if="readActivated2">{{ description2 }}</span>
+            <button class="show_more" v-if="!readActivated2" @click="readActivated2 = true">
+              Показать еще
+              <svg
+                width="24.000000"
+                height="24.000000"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <desc>Created with Pixso.</desc>
+                <defs />
+                <path
+                  id="Path"
+                  d="M8 10L12 14L16 10"
+                  stroke="#FFFFFF"
+                  stroke-opacity="1.000000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
+            <div class="advice_bottom">
+              <button class="products_btn">
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs />
+                  <path
+                    id="Path"
+                    d="M7.07788 21.8081C9.78589 21.8081 11.9819 19.6121 11.9819 16.9041C11.9819 14.196 9.78687 12 7.07788 12C4.3689 12 2.17383 14.196 2.17383 16.9041"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="Path"
+                    d="M7.08301 21.813C6.34497 21.813 5.646 21.6501 5.01807 21.3591L2 22L2.6311 18.9761C2.33789 18.3459 2.17407 17.644 2.17407 16.9041"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    id="Path"
+                    d="M6.55688 12.0281C6.19897 11.207 6 10.312 6 9.37305C6 5.35596 9.5979 2.13306 14 2.13306C18.4021 2.13306 22 5.35596 22 9.37305C22 11.7471 20.738 13.8372 18.801 15.155C18.802 15.9111 18.8 16.9302 18.8 18L15.6609 16.4541C15.124 16.5571 14.5691 16.613 14 16.613C13.293 16.613 12.6069 16.5291 11.9529 16.3721"
+                    stroke="#323232"
+                    stroke-opacity="1.000000"
+                    stroke-width="1.500000"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <span>Написать</span>
+              </button>
+              <router-link to="#" v-if="readActivated2">Подробнее</router-link>
+            </div>
           </div>
-          <!-- ntg child 3 -->
-          <div class="advice advice_3">
-            <span>Бесплатный продукт</span>
-            <span>Консультация по фигме</span>
-            <span
-              >Расскажу про нюансы использования автолейаутов, компонентов и
-              переменных.</span
+          <button class="show_more">
+            Показать еще
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-            <button class="products_btn_red">
-              <span>Написать</span>
-            </button>
-          </div>
+              <desc>Created with Pixso.</desc>
+              <defs />
+              <path
+                id="Path"
+                d="M8 10L12 14L16 10"
+                stroke="#FFFFFF"
+                stroke-opacity="1.000000"
+                stroke-width="1.500000"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
         <!-- Products end -->
 
         <!-- Education start -->
         <div class="education bcg_gray">
-          <div class="education_top">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M15.0021 17.5031H4.99793C4.07707 17.5031 3.33057 16.7566 3.33057 15.8358V4.16423C3.33057 3.24337 4.07707 2.49687 4.99793 2.49687H15.0021C15.923 2.49687 16.6695 3.24337 16.6695 4.16423V15.8358C16.6695 16.7566 15.923 17.5031 15.0021 17.5031Z"
-                fill="#DC9350"
-                stroke="#DC9350"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M6.66528 6.66528H13.3347"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M6.66528 13.3347H8.33264"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M13.8441 12.9412L12.2226 14.5627L11.2505 13.5898"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M6.66528 10H13.3347"
-                stroke="#222222"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span>Образование</span>
-          </div>
           <div class="education_card">
-            <img src="@/assets/images/profil_education.png" alt="" />
+            <img src="" alt="" />
             <div class="education_card_text">
               <ul>
                 <li>Высшее</li>
@@ -448,15 +385,7 @@
             </div>
           </div>
           <div class="education_card">
-            <img src="@/assets/images/profil_education.png" alt="" />
-            <div class="education_card_text">
-              <ul>
-                <li>Курс</li>
-                <li>Иван Иванов – настройка таргета</li>
-              </ul>
-            </div>
-          </div>
-          <div class="education_card">
+            <img src="" alt="" />
             <div class="education_card_text">
               <ul>
                 <li>Курс</li>
@@ -465,6 +394,7 @@
             </div>
           </div>
           <div class="education_card">
+            <img src="" alt="" />
             <div class="education_card_text">
               <ul>
                 <li>Курс</li>
@@ -472,6 +402,29 @@
               </ul>
             </div>
           </div>
+          <button class="show_more" @click="education">
+            Показать еще
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <desc>Created with Pixso.</desc>
+              <defs />
+              <path
+                id="Path"
+                d="M8 10L12 14L16 10"
+                stroke="#FFFFFF"
+                stroke-opacity="1.000000"
+                stroke-width="1.500000"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
         <!-- Education end -->
       </div>
@@ -485,6 +438,32 @@ import HeadNew from "@/components/newVersionComponents/HeadNew.vue";
 export default {
   components: {
     HeadNew,
+  },
+  data() {
+    return {
+      readActivated: false,
+      readActivated2: false,
+      cardNum: 3,
+      description:
+        "Помогу настроить рекламу в телеграм Провожу личные консультации и обучение в центре Москвы и онлайн по всему миру как со взрослыми, так и с подростками. Я верю, что ответы на все вопросы",
+      description2:
+        "Провожу личные консультации и обучение в центре Москвы и онлайн по всему миру как со взрослыми, так и с подростками. Я верю, что ответы на все вопросы",
+    };
+  },
+  methods: {
+    education() {
+      this.cardNum = this.cardNum + 2;
+      $(".education_card").each((i, card) => {
+        if (this.cardNum > i + 1) {
+          $(card).css("display", "flex");
+        } else {
+          $(card).css("display", "none");
+        }
+      });
+    },
+  },
+  mounted() {
+    this.education();
   },
 };
 </script>
@@ -573,6 +552,7 @@ export default {
 
     // tinder_location
     .tinder_location {
+      margin-bottom: 20px;
       .location_top {
         margin: 20px auto 12px auto;
         display: flex;
@@ -606,6 +586,30 @@ export default {
       }
     }
 
+    // looking_for_can
+    .looking_for_can {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      margin-bottom: 20px;
+      button {
+        color: rgb(255, 255, 255);
+        font-family: Raleway;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0%;
+        text-align: left;
+        min-height: 157px;
+        height: 100%;
+        border-radius: 20px;
+        text-align: center;
+        background: rgb(59, 59, 59);
+      }
+      .looking_for_btn {
+        background: rgb(207, 46, 46);
+      }
+    }
     // profil_information
     .profil_information {
       // font-family: Raleway;
@@ -620,6 +624,7 @@ export default {
 
     // contact_btn
     .contact_btn {
+      margin-bottom: 20px;
       .phone_btn,
       .visa_btn {
         width: 100%;
@@ -691,17 +696,25 @@ export default {
         display: flex;
         align-items: center;
         gap: 4px;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
       ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         li {
-          margin: 8px 0;
           display: flex;
           align-items: center;
-          color: #d3d2d2;
+          justify-content: space-between;
+          color: rgb(211, 210, 210);
+          font-family: Raleway;
           font-size: 14px;
           font-weight: 400;
           line-height: 18px;
+          letter-spacing: 0%;
+          text-align: left;
+          border-bottom: 1px solid rgb(48, 48, 48);
+          padding: 8px 0px 8px 0px;
         }
       }
     }
@@ -721,129 +734,93 @@ export default {
         span {
           display: block;
         }
-      }
-      .advice_1 {
-        img {
-          //   max-width: 272px !important;
-          margin: 0 auto 12px auto;
-          border-radius: 4px;
-          display: block;
-        }
-        :nth-child(2) {
-          color: #a6a5a5;
+        .title_small {
+          color: rgb(95, 193, 93);
+          font-family: Raleway;
           font-size: 12px;
           font-weight: 600;
           line-height: 16px;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 8px;
         }
-        :nth-child(3) {
-          color: #fff;
+        .title {
+          color: rgb(255, 255, 255);
+          font-family: Raleway;
           font-size: 16px;
           font-weight: 600;
           line-height: 20px;
-          margin: 4px 0;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 6px;
         }
-        :nth-child(4) {
-          overflow: hidden;
-          color: #d3d2d2;
-          font-size: 14px;
+        .description {
+          color: rgb(211, 210, 210);
+          font-family: Raleway;
+          font-size: 12px;
           font-weight: 400;
-          line-height: 18px;
+          line-height: 16px;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 11px;
         }
-        .products_btn_red {
-          background: #cf2e2e;
-          border: none;
-          padding: 10px 24px;
-          border-radius: 4px;
-          margin-top: 12px;
-          span {
+        .show_more {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: rgb(255, 255, 255);
+          font-family: Raleway;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 14px;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 16px;
+          margin-left: 0 !important;
+        }
+        .advice_bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .products_btn {
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #fff !important;
-            text-align: center;
-            font-size: 14px;
+            gap: 3px;
+            border-radius: 4px;
+            background: rgb(201, 201, 201);
+            padding: 10px 12px 10px 12px;
+            color: rgb(26, 25, 25);
+            font-family: Raleway;
+            font-size: 12px;
             font-weight: 600;
-            line-height: 18px;
+            line-height: 16px;
+            letter-spacing: 0%;
+            text-align: center;
+          }
+          .more_details {
+            color: rgb(255, 255, 255);
+            font-family: Raleway;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0%;
+            text-align: left;
           }
         }
       }
-      .advice_2 {
-        :nth-child(1) {
-          color: #a6a5a5;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 16px;
-        }
-        :nth-child(2) {
-          color: #fff;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 20px;
-          margin: 4px 0;
-        }
-        :nth-child(3) {
-          overflow: hidden;
-          color: #d3d2d2;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 18px;
-        }
-        .products_btn_red {
-          background: #cf2e2e;
-          border: none;
-          padding: 10px 24px;
-          border-radius: 4px;
-          margin-top: 12px;
-          span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff !important;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-          }
-        }
-      }
-      .advice_3 {
-        :nth-child(1) {
-          color: #a6a5a5;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 16px;
-        }
-        :nth-child(2) {
-          color: #fff;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 20px;
-          margin: 4px 0;
-        }
-        :nth-child(3) {
-          overflow: hidden;
-          color: #d3d2d2;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 18px;
-        }
-        .products_btn_red {
-          background: #cf2e2e;
-          border: none;
-          padding: 10px 24px;
-          border-radius: 4px;
-          margin-top: 12px;
-          span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff !important;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-          }
-        }
+      .show_more {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        gap: 8px;
+        color: rgb(255, 255, 255);
+        font-family: Raleway;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 17px;
       }
     }
     .education {
@@ -876,8 +853,21 @@ export default {
           }
         }
       }
+      .show_more {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        gap: 8px;
+        color: rgb(255, 255, 255);
+        font-family: Raleway;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 17px;
+      }
     }
   }
 }
-
 </style>
