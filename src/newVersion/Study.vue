@@ -1,6 +1,6 @@
 <template>
   <div class="study">
-    <head-new to="" @click="$router.go(-1)" page_title="Учусь" />
+    <head-new to="" page_title="Учусь" />
 
     <div class="study_home" v-if="materials">
       <div class="main_container">

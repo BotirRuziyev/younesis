@@ -614,6 +614,7 @@ export default {
 <style lang="scss" scoped>
 .coins_profile {
   .profile_head {
+    margin-top: 24px;
     .profile_head_top {
       display: flex;
       align-items: center;

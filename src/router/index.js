@@ -21,6 +21,16 @@ import EditNiches from '@/views/profile/EditNiches.vue';
 import EditLinksToProjects from '@/views/profile/EditLinksToProjects.vue';
 import EditContacts from '@/views/profile/EditContacts.vue';
 
+import EditPersonalData from '@/views/profile/EditPersonalData.vue';
+import EditDescription from '@/views/profile/EditDescription.vue';
+import AddMogu from '@/views/profile/MoguAdd.vue';
+import AddNeed from '@/views/profile/NeedAdd.vue';
+import Achievements from '@/views/profile/Achievements.vue';
+import EditEducation from '@/views/profile/EditEducation.vue';
+import EditProducts from '@/views/profile/EditProducts.vue';
+import Platform from '@/views/profile/Platform.vue';
+import Hyde from '@/views/profile/Hyde.vue';
+
 // new version
 import NewHomeLayout from '@/newVersion/layouts/HomeLayout.vue'
 import NewHome from '@/newVersion/Home.vue';
@@ -33,13 +43,18 @@ import Tinder from '@/newVersion/Tinder.vue'
 import CardHolder from '@/newVersion/CardHolder.vue'
 import NewProfile from '@/newVersion/profile/Profile.vue'
 import newProfileEdit from '@/newVersion/profile/Edit.vue'
-
-
 import Partner from '@/newVersion/Partner.vue'
 import Filter from '@/newVersion/Filter.vue'
 import PartnerSearch from '@/newVersion/PartnerSearch.vue'
 import CoinsProfile from '@/newVersion/profile/CoinsProfile.vue'
+import SomeoneProfile from '@/newVersion/profile/SomeoneProfile.vue'
 // new version end
+
+// chats start 
+import ChatsHomeLayout from '@/views/chats/layouts/HomeLayout.vue'
+import ChatsHome from '@/views/chats/Home.vue'
+import ChatResponseSearch from '@/views/chats/ChatResponseSearch.vue'
+// chats end
 
 const routes = [
   {
@@ -74,12 +89,21 @@ const routes = [
             component: EditProfileView,
             children: [
               { path: '', name: 'EditProfile', component: EditProfile },
+              { path: 'personal-data', name: 'EditPersonalData', component: EditPersonalData },
+              { path: 'profile-description', name: 'EditDescription', component: EditDescription },
+              { path: 'mogu', name: 'AddMogu', component: AddMogu },
+              { path: 'need', name: 'AddNeed', component: AddNeed },
+              { path: 'achievements', name: 'Achievements', component: Achievements },
+              { path: 'education', name: 'EditEducation', component: EditEducation },
+              { path: 'products', name: 'EditProducts', component: EditProducts },
+              { path: 'platform', name: 'Platform', component: Platform },
+              { path: 'hyde', name: 'Hyde', component: Hyde },
               { path: 'roles', name: 'EditRoles', component: EditRoles },
               { path: 'niches', name: 'EditNiches', component: EditNiches },
               { path: 'links-to-projects', name: 'EditLinksToProjects', component: EditLinksToProjects },
               { path: 'contacts', name: 'EditContacts', component: EditContacts },
             ]
-          }
+          },
         ]
       },
     ]
@@ -115,9 +139,22 @@ const routes = [
       { path: 'filter', name: 'Filter', component: Filter },
       { path: 'partner-search', name: 'PartnerSearch', component: PartnerSearch },
       { path: 'coins-profile', name: 'CoinsProfile', component: CoinsProfile },
+      { path: 'someone-profile', name: 'SomeoneProfile', component: SomeoneProfile },
+    ]
+  },
+  // New version end
+
+  // chats start
+  {
+    path: '/chats',
+    name: 'ChatsHomeLayout',
+    component: ChatsHomeLayout,
+    children: [
+      { path: "", name: 'ChatsHome', component: ChatsHome },
+      { path: "chat-response-search", name: 'ChatResponseSearch', component: ChatResponseSearch },
     ]
   }
-  // New version end
+  // chats end
 ]
 
 const router = createRouter({

@@ -26,10 +26,18 @@ export default {
 
     $("body").addClass("dark-theme");
   },
-  methods: {},
+  mounted() {
+    setInterval(function () {
+      $(".form_control #information_val").each((i, element) => {
+        if ($(element).prop("scrollHeight") < 248) {
+          $(element).css("height", $(element).prop("scrollHeight") + "px");
+        }
+      });
+    }, 100);
+  },
 };
 </script>
 
 <style lang="scss">
-@import "@/assets/app.scss";
+@import "@/assets/_variables.scss";
 </style>

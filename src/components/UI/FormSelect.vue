@@ -1,198 +1,277 @@
 <template>
-    <div class="form_select_wrapper" ref="form_select_wrapper" :class="{'active': select_open}">
-        <label>{{ label }}</label>
-        <button class="select_button" @click="select_open = !select_open">
-            <span>{{value}}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                <path d="M8.25781 10L12.2212 14L16.1846 10" stroke="#121111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <div class="select_options" ref="select_options">
-            <button
-                v-for="(option, i) in options"
-                :key="i"
-                @click="selectOption(option)"
-                :class="{
-                    'border_bottom': i !== options.length - 1,
-                    'active': option === value
-                }"
-            >
-                <span>{{ option }}</span>
-                <svg v-if="option === value" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                    <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
-                </svg>
-            </button>
-        </div>
+  <div class="form_select_wrapper" ref="form_select_wrapper" :class="{ active: select_open }">
+    <label>{{ label }}</label>
+    <button
+      class="select_button"
+      @click="select_open = !select_open"
+      :class="select_open ? 'select_button_active' : ''"
+    >
+      <span class="select_value" v-if="value != ''">{{ value }}</span>
+      <span v-if="value == ''" class="select_val_non">
+        <svg
+          width="15.642090"
+          height="15.642090"
+          viewBox="0 0 15.6421 15.6421"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <desc>Created with Pixso.</desc>
+          <defs />
+          <path
+            id="Vector"
+            d="M0.75 7.82104L14.8921 7.82104M7.82104 0.75L7.82104 14.8921"
+            stroke="#FFFFFF"
+            stroke-opacity="1.000000"
+            stroke-width="1.500000"
+            stroke-linejoin="round"
+          />
+        </svg>
+        Text
+      </span>
+      <div>
+        <svg
+          width="25.000000"
+          height="25.000000"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <desc>Created with Pixso.</desc>
+          <defs />
+          <path
+            id="Path"
+            d="M8.5 10.5L12.5 14.5L16.5 10.5"
+            stroke="#D3D2D2"
+            stroke-opacity="1.000000"
+            stroke-width="1.500000"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            class="drop_icon"
+          />
+          <path
+            id="Path"
+            d="M24.5 0.5L24.5 24.5L0.5 24.5L0.5 0.5L24.5 0.5Z"
+            stroke="#D3D2D2"
+            stroke-opacity="1.000000"
+            stroke-width="1.000000"
+          />
+        </svg>
+      </div>
+    </button>
+    <div class="select_options" ref="select_options">
+      <button
+        ref="border_bottom"
+        v-for="(option, i) in options"
+        :key="i"
+        @click="selectOption(option)"
+        :class="{
+          border_bottom: i !== options.length - 1,
+          active: option === value,
+        }"
+      >
+        <span>{{ option }}</span>
+        <svg v-if="option === value" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+          <path
+            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+          />
+        </svg>
+      </button>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'FormSelect',
-    props: {
-        label: {
-            type: String,
-            default: ''
-        },
-        options: {
-            type: Array,
-            default: [],
-        },
-        value: String,
+  name: "FormSelect",
+  props: {
+    label: {
+      type: String,
+      default: "",
     },
-    emits: ['update:value'],
-    data () {
-        return {
-            select_open: false,
-        }
+    options: {
+      type: Array,
+      default: [],
     },
-    watch: {
-        select_open () {
-            let select_options = this.$refs.select_options;
-            this.select_open ? $(select_options).slideDown(300) : $(select_options).slideUp(300);
-        }
+    value: String,
+  },
+  emits: ["update:value"],
+  data() {
+    return {
+      select_open: false,
+    };
+  },
+  watch: {
+    select_open() {
+      let select_options = this.$refs.select_options;
+      this.select_open ? $(select_options).slideDown(300) : $(select_options).slideUp(300);
     },
-    mounted () {
-        $(this.$refs.select_options).slideUp(0);
-        document.addEventListener('click', this.handleOutsideClick);
+  },
+  mounted() {
+    $(this.$refs.select_options).slideUp(0);
+    document.addEventListener("click", this.handleOutsideClick);
+  },
+  methods: {
+    selectOption(option) {
+      this.$emit("update:value", option);
+      this.select_open = false;
     },
-    methods: {
-        selectOption (option) {
-            this.$emit('update:value', option)
-            this.select_open = false;
-        },
-        handleOutsideClick(event) {
-            const box = this.$refs.form_select_wrapper;
-            if (box && !box.contains(event.target)) {
-                this.select_open = false;
-            }
-        }
-    }
-}
+    handleOutsideClick(event) {
+      const box = this.$refs.form_select_wrapper;
+      if (box && !box.contains(event.target)) {
+        this.select_open = false;
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-@import '@/assets/_variables.scss';
+@import "@/assets/_variables.scss";
 
 .form_select_wrapper {
-    position: relative;
+  position: relative;
 
-    label {
-        color: $color-11;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 14px;
-        margin-bottom: 4px;
-        display: block;
+  label {
+    color: $color-11;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .select_button {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid $color-4;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    .drop_icon {
+      transform-origin: center;
+      transition: 0.3s;
     }
-    
-    .select_button {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid $color-4;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 12px 12px 13px;
 
-        span {
-            color: $color-2;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 22px;
-        }
+    span {
+      color: rgb(255, 255, 255);
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0%;
+      text-align: left;
     }
-    
-}
-
-.form_select_wrapper.active .select_button {
-    border-radius: 12px 12px 0 0;
-    border-bottom: 0px;
+    svg {
+      line-height: 0;
+    }
+    .select_val_non {
+      display: flex;
+      align-items: center;
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0%;
+      text-align: left;
+      svg {
+        margin-right: 11px;
+        line-height: 0;
+      }
+    }
+  }
+  .select_button_active {
+    .drop_icon {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .select_options {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid $color-4;
-    border-radius: 0 0 16px 16px;
-    overflow: hidden;
-    
-    button {
-        background: $color-1;
-        height: 48px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 13px;
+  width: 100%;
+  position: absolute;
+  top: calc(100% + 4px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-4;
+  border-radius: 16px;
+  overflow: hidden;
 
-        &:hover {
-            background: $color-7;
-        }
-        
-        span {
-            color: $color-2;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 22px;
-        }
+  button {
+    background: $color-1;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 13px;
+
+    &:hover {
+      background: $color-7;
     }
-    
-    button.active {
-        background: $color-7;
+
+    span {
+      color: $color-2;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
     }
-    
-    .border_bottom {
-        border-bottom: 1px solid $color-14;
-    }
+  }
+
+  button.active {
+    background: $color-7;
+  }
+
+  .border_bottom {
+    border-bottom: 1px solid $color-14;
+  }
 }
 
-
 .dark-theme {
-    .form_select_wrapper {
-        .select_button {
-            border: 1px solid $color-13;
+  .form_select_wrapper {
+    .select_button {
+      border: 1px solid $color-13;
 
-            span {
-                color: $color-1;
-            }
+      span {
+        color: $color-1;
+      }
 
-            svg path {
-                stroke: $color-1;
-            }
-        }
+      svg path {
+        stroke: $color-1;
+      }
+    }
+  }
+
+  .select_options {
+    border: 1px solid $color-13;
+
+    button {
+      background: $color-15;
+
+      &:hover {
+        background: $color-12;
+      }
+
+      span {
+        color: $color-1;
+      }
+
+      svg path {
+        fill: $color-1;
+      }
     }
 
-    .select_options {
-        border: 1px solid $color-13;
-
-        button {
-            background: $color-15;
-
-            &:hover {
-                background: $color-12;
-            }
-
-            span {
-                color: $color-1;
-            }
-            
-            svg path {
-                fill: $color-1;
-            }
-        }
-        
-        button.active {
-            background: $color-12;
-        }
-        
-        .border_bottom {
-            border-bottom: 1px solid $color-13;
-        }
+    button.active {
+      background: $color-12;
     }
+
+    .border_bottom {
+      border-bottom: 1px solid $color-13;
+    }
+  }
 }
 </style>

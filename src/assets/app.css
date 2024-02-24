@@ -26,7 +26,8 @@ span {
   display: inline-block;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
 }
 
@@ -40,6 +41,12 @@ body {
 body.dark-theme {
   background: #171717;
   color: #fff;
+}
+
+textarea {
+  resize: none;
+  min-height: 48px;
+  padding: 12px;
 }
 
 .auth_title {
@@ -145,117 +152,6 @@ body.dark-theme {
   display: none;
 }
 
-.courses_card_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.courses_card_wrapper .card {
-  border-radius: 16px;
-  background: #F6F6F6;
-  padding: 16px;
-  width: 325px;
-  height: 346px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.courses_card_wrapper .card .card_left {
-  display: none;
-}
-.courses_card_wrapper .card .card_right {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.courses_card_wrapper .card .card_img {
-  border-radius: 8px;
-  overflow: hidden;
-  background: #DEDEDE;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  margin-bottom: 16px;
-}
-.courses_card_wrapper .card .card_img img {
-  height: 100%;
-}
-.courses_card_wrapper .card .card_title {
-  color: #121111;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 28px;
-}
-.courses_card_wrapper .card .remained {
-  border-radius: 29px;
-  background: #F94438;
-  padding: 4px 12px;
-  width: auto;
-  display: inline-block;
-  margin-top: 8px;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-}
-.courses_card_wrapper .card .amount {
-  border-radius: 29px;
-  background: #ECECEC;
-  padding: 4px 12px;
-  color: #121111;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-  display: inline-block;
-  margin-top: 16px;
-}
-.courses_card_wrapper .card .amount span {
-  color: #A6A5A5;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-  margin-left: 8px;
-  text-decoration: line-through;
-}
-.courses_card_wrapper .card .card_degree .degree_head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-.courses_card_wrapper .card .card_degree .degree_head .dedgree_title {
-  color: #121111;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-}
-.courses_card_wrapper .card .card_degree .degree_head .degree_value {
-  color: #CF2E2E;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
-}
-.courses_card_wrapper .card .card_degree .degree_line {
-  border-radius: 4px;
-  background: #ECECEC;
-  height: 8px;
-  position: relative;
-}
-.courses_card_wrapper .card .card_degree .degree_line span {
-  height: 8px;
-  border-radius: 4px;
-  background: #CF2E2E;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .dark-theme .auth_title {
   color: #fff;
 }
@@ -269,9 +165,10 @@ body.dark-theme {
   color: #fff;
 }
 .dark-theme .edit_link {
-  border: 1px solid #4D4C4C;
+  border: 1px solid #4d4c4c;
 }
-.dark-theme .edit_link svg path, .dark-theme .edit_link svg circle {
+.dark-theme .edit_link svg path,
+.dark-theme .edit_link svg circle {
   stroke: #fff;
 }
 .dark-theme .edit_link span {
@@ -281,13 +178,13 @@ body.dark-theme {
   background: #222222;
 }
 .dark-theme .courses_card_wrapper .card .card_img {
-  background: #3B3B3B;
+  background: #3b3b3b;
 }
 .dark-theme .courses_card_wrapper .card .card_title {
   color: #fff;
 }
 .dark-theme .courses_card_wrapper .card .amount {
-  background: #3B3B3B;
+  background: #3b3b3b;
   color: #fff;
 }
 .dark-theme .courses_card_wrapper .card .card_degree .degree_head .dedgree_title {
@@ -297,13 +194,13 @@ body.dark-theme {
   color: #fff;
 }
 .dark-theme .courses_card_wrapper .card .card_degree .degree_line {
-  background: #4B4B4B;
+  background: #4b4b4b;
 }
 
 .support_chat {
   position: relative;
   border-radius: 16px;
-  background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+  background: linear-gradient(180deg, #2aabee 0%, #229ed9 100%);
   padding: 20px 26px 20px 20px;
 }
 .support_chat .icon {
@@ -328,7 +225,7 @@ body.dark-theme {
 }
 .support_chat button {
   border-radius: 8px;
-  background: #48B2E5;
+  background: #48b2e5;
   padding: 12px 16px;
   color: #fff;
   font-size: 14px;
@@ -454,13 +351,14 @@ body.dark-theme {
 
 .main_container {
   max-width: 420px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
 
 .main_btn {
   border-radius: 44px;
-  background: linear-gradient(90deg, #EB3349 0%, #F44343 100%);
+  background: linear-gradient(90deg, #eb3349 0%, #f44343 100%);
   padding: 10px 12px;
   gap: 4px;
   display: flex;
@@ -472,14 +370,14 @@ body.dark-theme {
 }
 
 .main_title {
-  color: #FFF;
+  color: #fff;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
 }
 
 .subtitle {
-  color: #FFF;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;

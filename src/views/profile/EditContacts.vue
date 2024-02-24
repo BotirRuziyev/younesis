@@ -1,93 +1,125 @@
 <template>
-    <mobile-edit-header to="EditProfile">Ссылки на проекты</mobile-edit-header>
-    <div class="edit_contact">
-        <div class="contact_item" v-for="(item, i) in user_data" :key="i">
-            <form-input
-                :type="user_data[i].type"
-                v-model:value="user_data[i].value"
-                :label="user_data[i].name"
-            />
-            <div v-if="user_data[i].subtitle" class="subtitle">{{ user_data[i].subtitle }}</div>
-            <div v-if="user_data[i].show_title" class="switch_wrapper">
-                <div class="text">{{ user_data[i].show_title }}</div>
-                <form-switch v-model:value="user_data[i].show" />
-            </div>
+  <div class="contacts">
+    <head-new page_title="Контакты"></head-new>
+    <div class="main_container">
+      <div class="form_control">
+        <form-input label="Telegram" value="@andreyivanov" placeholder="Telegram" @update:value="inputVal"></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="true"></form-switch>
         </div>
+      </div>
+      <div class="form_control">
+        <form-input label="Instagram*" value="@andrey" placeholder="Instagram*" @update:value="inputVal"></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="true"></form-switch>
+        </div>
+        <p class="description">*Instagram, продукт компании Meta, признанная экстремистской организацией в России</p>
+      </div>
+      <div class="form_control">
+        <form-input
+          label="TikTok"
+          value="tiktok.com/@andyandrey"
+          placeholder="TikTok"
+          @update:value="inputVal"
+        ></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="true"></form-switch>
+        </div>
+      </div>
+      <div class="form_control">
+        <form-input
+          label="YouTube"
+          value="youtube.com/@targettttttt"
+          placeholder="YouTube"
+          @update:value="inputVal"
+        ></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="true"></form-switch>
+        </div>
+      </div>
+      <div class="form_control">
+        <form-input label="VK" value="vk.com/@andyandrey" placeholder="VK" @update:value="inputVal"></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="false"></form-switch>
+        </div>
+      </div>
+      <div class="form_control">
+        <form-input
+          label="Номер телефона"
+          value="+7 (937) 282-00-00"
+          placeholder="Номер телефона"
+          type="phone"
+          @update:value="inputVal"
+        ></form-input>
+        <div class="form-switch-control">
+          <span>Видно всем</span>
+          <form-switch :value="false"></form-switch>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import HeadNew from "@/components/newVersionComponents/HeadNew.vue";
+import ProfileLink from "@/components/UI/ProfileLink";
+import FormInput from "@/components/UI/FormInput.vue";
+import FormSelect from "@/components/UI/FormSelect.vue";
+import FormSwitch from "@/components/UI/FormSwitch.vue";
 export default {
-    name: 'EditContacts',
-    data () {
-        return {
-            user_data: [
-                {name: 'Telegram', type: 'text', value: '@andreyivanov', show_title: 'Показывать Telegram в профиле', show: true},
-                {name: 'Instagram*', type: 'text', value: '@andreyivanov', show_title: 'Показывать Instagram в профиле', show: true, subtitle: '*Instagram, продукт компании Meta, признанная экстремистской организацией в России'},
-                {name: 'E-mail', type: 'text', value: ''},
-                {name: 'Номер телефона', type: 'phone', value: '+79372820000', show_title: 'Показывать телефон в профиле', show: false},
-            ]
-        }
-    }
-}
+  name: "EditProfile",
+  components: {
+    HeadNew,
+    ProfileLink,
+    FormInput,
+    FormSelect,
+    FormSwitch,
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    inputVal(val) {
+      $(".form_control #information_val").each((i, input) => {
+        $(input).on("input", () => {
+          $(input).val(val);
+        });
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-@import '@/assets/_variables.scss';
-
-.edit_contact {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-
-    .subtitle {
-        color: $color-19;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14px;
-        margin-top: 4px;
+.contacts {
+  .form_control {
+    margin-bottom: 16px;
+    &:first-child {
+      margin-top: 24px;
     }
-
-    .switch_wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 16px;
-
-        .text {
-            color: $color-2;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 18px;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
-}
-
-.dark-theme .edit_contact {
-    .subtitle {
-        color: $color-13;
+    .form-switch-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+      border-radius: 12px;
+      background: rgb(34, 34, 34);
+      padding: 12px;
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0%;
+      text-align: left;
     }
-
-    .switch_wrapper .text {
-        color: $color-1;
-    }
-}
-
-
-
-
-@media only screen and (max-width: 992px) {
-    .edit_contact {
-        margin-top: 8px;
-        gap: 24px;
-
-        .subtitle {
-            margin-top: 8px;
-        }
-    
-        .switch_wrapper {
-            margin-top: 8px;
-        }
-    }
+  }
 }
 </style>

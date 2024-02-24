@@ -1,0 +1,9 @@
+<svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<path id="Path" d="M10 15L7 15C4.79102 15 3 16.7908 3 19L3 20" stroke="#D3D2D2" stroke-opacity="1.000000" stroke-width="1.500000"/>
+	<path id="Path" d="M17.334 12.2929C17.5215 12.1053 17.7754 12 18.041 12C18.3066 12 18.5605 12.1053 18.748 12.2929L19.707 13.2514C20.0977 13.6419 20.0977 14.2751 19.707 14.6656L16.666 17.7071C16.4785 17.8947 16.2246 18 15.959 18L14.5 18C14.2246 18 14 17.7761 14 17.5L14 16.0415C14 15.7763 14.1055 15.522 14.293 15.3344L17.334 12.2929Z" stroke="#D3D2D2" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+	<circle id="Oval" cx="11.000000" cy="7.000000" r="4.000000" stroke="#D3D2D2" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+</svg>

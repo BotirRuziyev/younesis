@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
-@import '_variables.scss';
+@import "_variables.scss";
 
 * {
     margin: 0;
@@ -29,7 +29,8 @@ span {
     display: inline-block;
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
 }
 
@@ -44,7 +45,11 @@ body.dark-theme {
     background: $color-3;
     color: $color-1;
 }
-
+textarea {
+    resize: none;
+    min-height: 48px;
+    padding: 12px;
+}
 .auth_title {
     color: #121111;
     font-variant-numeric: lining-nums proportional-nums;
@@ -86,7 +91,7 @@ body.dark-theme {
     justify-content: center;
     text-decoration: none;
     gap: 4px;
-    
+
     span {
         color: $color-2;
         font-size: 16px;
@@ -153,134 +158,6 @@ body.dark-theme {
     display: none;
 }
 
-.courses_card_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    
-    .card {
-        border-radius: 16px;
-        background: $color-7;
-        padding: 16px;
-        width: 325px;
-        height: 346px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .card_left {
-            display: none;
-        }
-
-        .card_right {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card_img {
-            border-radius: 8px;
-            overflow: hidden;
-            background: $color-8;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px;
-            margin-bottom: 16px;
-
-            img {
-                height: 100%;
-            }
-        }
-
-        .card_title {
-            color: $color-2;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 28px;
-        }
-
-        .remained {
-            border-radius: 29px;
-            background: $color-9;
-            padding: 4px 12px;
-            width: auto;
-            display: inline-block;
-            margin-top: 8px;
-            color: $color-1;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 18px;
-        }
-
-        .amount {
-            border-radius: 29px;
-            background: $color-10;
-            padding: 4px 12px;
-            color: $color-2;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 22px;
-            display: inline-block;
-            margin-top: 16px;
-
-            span {
-                color: $color-11;
-                text-align: center;
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 18px;
-                margin-left: 8px;
-                text-decoration: line-through;
-            }
-        }
-
-        .card_degree {
-            .degree_head {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 12px;
-
-                .dedgree_title {
-                    color: $color-2;
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 18px;
-                }
-
-                .degree_value {
-                    color: $color-5;
-                    font-size: 14px;
-                    font-weight: 600;
-                    line-height: 18px;
-                }
-            }
-
-            .degree_line {
-                border-radius: 4px;
-                background: $color-10;
-                height: 8px;
-                position: relative;
-
-                span {
-                    height: 8px;
-                    border-radius: 4px;
-                    background: $color-5;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                }
-            }
-        }
-    }
-}
-
 .dark-theme {
     .auth_title {
         color: $color-1;
@@ -299,10 +176,11 @@ body.dark-theme {
     }
 
     .edit_link {
-        border: 1px solid #4D4C4C;
+        border: 1px solid #4d4c4c;
 
         svg {
-            path, circle {
+            path,
+            circle {
                 stroke: #fff;
             }
         }
@@ -317,31 +195,31 @@ body.dark-theme {
             background: #222222;
 
             .card_img {
-                background: #3B3B3B;
+                background: #3b3b3b;
             }
 
             .card_title {
                 color: #fff;
             }
-    
+
             .amount {
-                background: #3B3B3B;
+                background: #3b3b3b;
                 color: #fff;
             }
 
             .card_degree {
-                .degree_head {    
+                .degree_head {
                     .dedgree_title {
                         color: #fff;
                     }
-    
+
                     .degree_value {
                         color: #fff;
                     }
                 }
-    
+
                 .degree_line {
-                    background: #4B4B4B;
+                    background: #4b4b4b;
                 }
             }
         }
@@ -351,7 +229,7 @@ body.dark-theme {
 .support_chat {
     position: relative;
     border-radius: 16px;
-    background: linear-gradient(180deg, #2AABEE 0%, #229ED9 100%);
+    background: linear-gradient(180deg, #2aabee 0%, #229ed9 100%);
     padding: 20px 26px 20px 20px;
 
     .icon {
@@ -370,7 +248,7 @@ body.dark-theme {
     }
 
     .description {
-        color: rgba(255, 255, 255, 0.80);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 14px;
         font-weight: 500;
         line-height: 18px;
@@ -379,7 +257,7 @@ body.dark-theme {
 
     button {
         border-radius: 8px;
-        background: #48B2E5;
+        background: #48b2e5;
         padding: 12px 16px;
         color: $color-1;
         font-size: 14px;
@@ -387,7 +265,6 @@ body.dark-theme {
         line-height: 18px;
     }
 }
-
 
 @media only screen and (max-width: 992px) {
     .main_title {
@@ -408,7 +285,7 @@ body.dark-theme {
         line-height: 28px;
         margin-bottom: 16px;
     }
-    
+
     .edit_head_mobile {
         display: block;
         position: relative;
@@ -425,7 +302,6 @@ body.dark-theme {
             font-weight: 700;
             line-height: 22px;
         }
-        
     }
 
     .dark-theme {
@@ -438,7 +314,7 @@ body.dark-theme {
 
     .courses_card_wrapper {
         gap: 12px;
-    
+
         .card {
             padding: 12px;
             width: 100%;
@@ -461,11 +337,11 @@ body.dark-theme {
                     object-fit: contain;
                 }
             }
-    
+
             .card_img {
                 display: none;
             }
-    
+
             .card_right {
                 width: calc(100% - 92px);
             }
@@ -480,41 +356,41 @@ body.dark-theme {
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-    
+
             .amount {
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 18px;
                 margin-top: 8px;
-    
+
                 span {
                     display: none;
                 }
             }
-    
+
             .card_degree {
                 .degree_head {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     margin-bottom: 8px;
-    
+
                     .dedgree_title {
                         font-size: 12px;
                         font-weight: 500;
                         line-height: 14px;
                     }
-    
+
                     .degree_value {
                         font-size: 12px;
                         font-weight: 600;
                         line-height: 14px;
                     }
                 }
-    
+
                 .degree_line {
                     height: 4px;
-    
+
                     span {
                         height: 4px;
                     }
@@ -534,7 +410,6 @@ body.dark-theme {
     }
 }
 
-
 // new version
 .wrapper {
     overflow: hidden;
@@ -543,13 +418,14 @@ body.dark-theme {
 
 .main_container {
     max-width: 420px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 16px;
 }
 
 .main_btn {
     border-radius: 44px;
-    background: linear-gradient(90deg, #EB3349 0%, #F44343 100%);
+    background: linear-gradient(90deg, #eb3349 0%, #f44343 100%);
     padding: 10px 12px;
     gap: 4px;
     display: flex;
@@ -561,14 +437,14 @@ body.dark-theme {
 }
 
 .main_title {
-    color: #FFF;
+    color: #fff;
     font-size: 18px;
     font-weight: 700;
-    line-height: 24px; 
+    line-height: 24px;
 }
 
 .subtitle {
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;

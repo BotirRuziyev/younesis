@@ -322,9 +322,6 @@ export default {
       this.modal = true;
     },
     onSlideChange(e) {
-      // e.updateSize();
-      // e.updateSlides();
-      // e.updateProgress();
       e.updateSlidesClasses();
       $(".swiper-wrapper").css("transition-duration", "0.7s");
       setTimeout(() => {
